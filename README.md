@@ -1,66 +1,45 @@
-# Understanding iris species measurements
+# Iris Species Exploratory Data Analysis
 
-**2026-09-05 · EDA**
+Exploratory study investigating morphological variance, class separability, and pairwise feature associations across Iris flower species.
 
-## Research question
+---
 
-How do flower measurements vary across species, and which measurements are associated?
+## Overview
 
-## Results
+* **Task:** Morphological exploratory analysis and class distribution evaluation.
+* **Dataset:** 149 usable records across 3 species with 4 continuous measurements (1 duplicate removed).
+* **Key Finding:** Strong positive linear association between petal length and petal width ($\vert{}r\vert{} = 0.963$).
+* **Focus:** Data quality checks, distribution profiling, and pairwise collinearity.
 
-The exploratory dataset contains 149 usable rows and 4 candidate features.
+---
 
-The strongest absolute Pearson feature correlation in the exploratory sample was petal length (cm) / petal width (cm) (|r| = 0.963); this suggests checking redundancy, not concluding causality.
+## Data Summary
 
-## Analysis scope
+* **Source:** [UCI Machine Learning Repository — Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris) (CC BY 4.0)
+* **Dimensions:** 149 usable rows, 4 numeric features, 0 missing values.
+* **Features Analyzed:** Sepal length, sepal width, petal length, and petal width (all in cm).
 
-This is an exploratory study. No predictive performance score is reported. A descriptive question was selected.
+---
 
-## Data provenance
+## Visualizations
 
-Source: [https://archive.ics.uci.edu/dataset/53/iris](https://archive.ics.uci.edu/dataset/53/iris)
+| Data Quality & Target Distribution | Feature Distributions |
+| :---: | :---: |
+| ![Data Quality](figures/data-quality.png) | ![Distributions](figures/distributions.png) |
 
-License: CC BY 4.0. Attribution and source description are in SOURCE.md. The exact analyzed snapshot and its SHA-256 are retained.
+| Pairwise Feature Correlations |
+| :---: |
+| ![Correlations](figures/correlations.png) |
 
-## Data quality
+---
 
-| Check | Value |
-| --- | --- |
-| original rows | 150 |
-| original features | 4 |
-| missing cells | 0 |
-| missing target rows removed | 0 |
-| exact duplicates removed | 1 |
-| usable rows | 149 |
+## Repository Structure
 
-Excluded from predictors: none specified. See data_dictionary.csv for column types, missingness and uniqueness.
-
-## Visual evidence
-
-![Missing values and target distribution](figures/data-quality.png)
-
-Missing values and target distribution.
-
-![Numeric feature distributions; up to six features by training/sample variance](figures/distributions.png)
-
-Numeric feature distributions; up to six features by training/sample variance.
-
-![Feature associations; correlation does not imply causation](figures/correlations.png)
-
-Feature associations; correlation does not imply causation.
-
-## Limitations
-
-This is a tiny, curated benchmark. Correlations and visible class separation do not establish causal relationships.
-
-The automated pipeline cannot infer all leakage paths, sampling bias, entity grouping or business meaning. Feature importance is post-hoc and is not used to choose the winner. Any follow-up tuned after inspecting this holdout needs a fresh final evaluation.
-
-## Reproduce
-
-From the repository root, install requirements.txt and run:
-
-```bash
-python daily_ds/reproduce.py .
-```
-
-The command uses the saved snapshot, configuration and dataset specification, and writes to reproduced/. analysis.ipynb provides a readable walkthrough. Numeric results may differ slightly across platforms; software versions and code hashes are recorded.
+```text
+├── figures/                   # Quality, distribution, and correlation plots
+├── analysis.ipynb             # Interactive walk-through of morphological patterns
+├── audit.json                 # Execution environment and dataset fingerprint
+├── data_dictionary.csv        # Feature types, bounds, and null counts
+├── descriptive_statistics.csv # Summary metrics across all features
+├── metrics.json               # Pipeline checks and data quality metrics
+└── README.md
