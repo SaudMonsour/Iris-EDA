@@ -60,7 +60,7 @@ The automated pipeline cannot infer all leakage paths, sampling bias, entity gro
 From the repository root, install requirements.txt and run:
 
 ```bash
-python daily_ds/reproduce.py projects/2026-09-05-iris
+python daily_ds/reproduce.py .
 ```
 
 The command uses the saved snapshot, configuration and dataset specification, and writes to reproduced/. analysis.ipynb provides a readable walkthrough. Numeric results may differ slightly across platforms; software versions and code hashes are recorded.
