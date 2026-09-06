@@ -1,0 +1,16 @@
+{
+  "original_rows": 150,
+  "original_features": 4,
+  "missing_cells": 0,
+  "missing_by_column": {
+    "sepal length (cm)": 0,
+    "sepal width (cm)": 0,
+    "petal length (cm)": 0,
+    "petal width (cm)": 0,
+    "species": 0
+  },
+  "missing_target_rows_removed": 0,
+  "excluded_columns": [],
+  "exact_duplicates_removed": 1,
+  "usable_rows": 149
+}

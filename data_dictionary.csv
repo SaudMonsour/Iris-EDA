@@ -1,0 +1,6 @@
+column,dtype,missing,unique,role
+sepal length (cm),float64,0,35,feature
+sepal width (cm),float64,0,23,feature
+petal length (cm),float64,0,43,feature
+petal width (cm),float64,0,22,feature
+species,object,0,3,target
