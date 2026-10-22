@@ -1,45 +1,31 @@
-# Iris Species Exploratory Data Analysis
+# التحليل الاستكشافي لقياسات أزهار السوسن
 
-Exploratory study investigating morphological variance, class separability, and pairwise feature associations across Iris flower species.
+دراسة وصفية لاختلاف قياسات الأزهار بين ثلاثة أنواع، باستخدام أربعة قياسات لطول وعرض الكأس والبتلة.
 
----
+تحتوي البيانات المنظّفة على 149 سجلًا بعد استبعاد تكرار واحد، دون خلايا مفقودة. بلغ أقوى ارتباط مطلق بين طول البتلة وعرضها 0.963.
 
-## Overview
+السؤال استكشافي؛ لا يوجد نموذج تنبؤ مختار أو اختبار محفوظ لقياس دقته. الارتباط في البيانات لا يثبت علاقة سببية.
 
-* **Task:** Morphological exploratory analysis and class distribution evaluation.
-* **Dataset:** 149 usable records across 3 species with 4 continuous measurements (1 duplicate removed).
-* **Key Finding:** Strong positive linear association between petal length and petal width ($\vert{}r\vert{} = 0.963$).
-* **Focus:** Data quality checks, distribution profiling, and pairwise collinearity.
+## الرسوم والنتائج المرئية
 
----
+![رسم 1: جودة البيانات وتوازن الفئات](figures/data-quality.png)
 
-## Data Summary
+![رسم 2: توزيع القيم](figures/distributions.png)
 
-* **Source:** [UCI Machine Learning Repository — Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris) (CC BY 4.0)
-* **Dimensions:** 149 usable rows, 4 numeric features, 0 missing values.
-* **Features Analyzed:** Sepal length, sepal width, petal length, and petal width (all in cm).
+![رسم 3: ارتباطات الخصائص](figures/correlations.png)
 
----
+الرسوم محفوظة من التنفيذ الأصلي. تعريب هذه الصفحة لا يغيّر بياناتها أو تسميات الصور داخل الملفات.
 
-## Visualizations
+## الملفات المرجعية
 
-| Data Quality & Target Distribution | Feature Distributions |
-| :---: | :---: |
-| ![Data Quality](figures/data-quality.png) | ![Distributions](figures/distributions.png) |
+- [مقاييس التقييم والنتائج](metrics.json).
+- [بيانات التدقيق وبيئة التنفيذ](audit.json).
+- [مصدر البيانات وشروط الترخيص](SOURCE.md).
+- [دفتر شرح التحليل](analysis.ipynb).
+- [ملاحظات المراجعة البشرية](LEARNING_NOTES.md).
 
-| Pairwise Feature Correlations |
-| :---: |
-| ![Correlations](figures/correlations.png) |
+## المصادر والإسناد
 
----
+- [مصدر 1: UCI Machine Learning Repository — Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris).
 
-## Repository Structure
-
-```text
-├── figures/                   # Quality, distribution, and correlation plots
-├── analysis.ipynb             # Interactive walk-through of morphological patterns
-├── audit.json                 # Execution environment and dataset fingerprint
-├── data_dictionary.csv        # Feature types, bounds, and null counts
-├── descriptive_statistics.csv # Summary metrics across all features
-├── metrics.json               # Pipeline checks and data quality metrics
-└── README.md
+[المرجع التقني الإنجليزي الكامل](README.en.md) يحفظ تفاصيل النسخة الأصلية. تُترك أسماء الملفات والأوامر ومعرّفات النماذج والمقاييس بصيغتها التقنية لضمان تطابقها مع الكود.
